@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-6 text-center">
+      <img src="../../assets/logo.png" alt="logo" class="img-fluid" />
+    </div>
+    <div class="col-12 col-md-6">
+      <h3>Login</h3>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <span
+            class="text-danger validate-alert"
+            *ngIf="(form.email.dirty || form.email.touched) && form.email.errors">
+            <ng-container [ngSwitch]="form.email.value">
+              <ng-container *ngSwitchCase="''">Email is required</ng-container>
+              <ng-container *ngSwitchDefault>Email is invalid</ng-container>
+            </ng-container>
+          </span>
+          <input
+            type="email"
+            class="form-control"
+            formControlName="email"
+            placeholder="email"
+            name="email"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <span
+            class="text-danger validate-alert"
+            *ngIf="(form.password.dirty || form.password.touched) && form.password.errors">
+            <ng-container [ngSwitch]="form.password.value">
+              <ng-container *ngSwitchCase="''">password is required</ng-container>
+              <ng-container *ngSwitchDefault>password is invalid</ng-container>
+            </ng-container>
+          </span>
+          <input
+            type="password"
+            name="password"
+            class="form-control"
+            minlength="6"
+            maxlength="12"
+            formControlName="password"
+            placeholder="password"
+            required
+          />
+        </div>
+        <div class="d-grid gap-2">
+          <button
+            class="btn login-btn btn-primary"
+            [disabled]="!loginForm.valid"
+            type="submit"
+          >
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="col-12">
+      <p class="text-center mt-5">
+        Don't have an account?
+        <a type="button" routerLink="/register">Register</a>
+      </p>
+    </div>
+  </div>
+</div>

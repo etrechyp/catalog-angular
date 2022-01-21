@@ -1,0 +1,9 @@
+.qtyInput {
+  min-width: 50px;
+  max-width: 60px;
+  height: 30px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin-right: 15px;
+}
+

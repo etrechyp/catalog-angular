@@ -1,0 +1,33 @@
+.email {
+  color: #fff;
+  font-size: 8px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.logo{
+  max-width: 190px;
+}
+
+.mobile-logout{
+  display: none;
+}
+
+.navbar{
+  border-bottom: 1px solid #ccc;
+}
+
+@media only screen and (max-width: 991px) {
+  .username
+  {
+    display: none;
+  }
+
+  .logout{
+    display: none;
+  }
+
+  .mobile-logout{
+    display: block;
+  }
+}

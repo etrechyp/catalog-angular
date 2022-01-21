@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  API_URL: 'http://127.0.0.1:8082/api/',
+  CF_URL: 'https://cf.api.sellercloud.com/rest/api/',
+  CF_USER: 'developers@sotodeals.com',
+  CF_PASSWORD: 'S0todeals.12#'
 };
 
 /*
@@ -14,3 +18,4 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+//https://www.xvideos.com/?k=Ebony+big+ass+babe+Sarah+Banks+interracial+fucked+

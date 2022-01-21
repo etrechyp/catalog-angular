@@ -1,0 +1,93 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center">
+      <img src="../../assets/logo.png" alt="logo" class="img-fluid" />
+    </div>
+    <div class="col-12">
+      <h3 class="text-start">Register</h3>
+      <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+        <div class="form-group">
+          <span class="text-danger text-start validate-alert"
+            *ngIf="(form.firstName.dirty || form.firstName.touched) && form.firstName.errors">
+            <ng-container [ngSwitch]="form.firstName.value">
+              <ng-container *ngSwitchCase="''">First name is required</ng-container>
+              <ng-container *ngSwitchDefault>First name is invalid</ng-container>
+            </ng-container>
+          </span>
+          <input
+            type="text"
+            formControlName="firstName"
+            class="form-control"
+            placeholder="First Name"
+            name="firstName"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <span class="text-danger validate-alert"
+            *ngIf="(form.lastName.dirty || form.lastName.touched) && form.lastName.errors">
+            <ng-container [ngSwitch]="form.lastName.value">
+              <ng-container *ngSwitchCase="''">Last name is required</ng-container>
+              <ng-container *ngSwitchDefault>Last name is invalid</ng-container>
+            </ng-container>
+          </span>
+          <input
+            type="text"
+            formControlName="lastName"
+            class="form-control"
+            placeholder="Last Name"
+            name="lastName"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <span
+            class="text-danger validate-alert"
+            *ngIf="(form.email.dirty || form.email.touched) && form.email.errors">
+            <ng-container [ngSwitch]="form.email.value">
+              <ng-container *ngSwitchCase="''">Email is required</ng-container>
+              <ng-container *ngSwitchDefault>Email is invalid</ng-container>
+            </ng-container>
+          </span>
+          <input
+            type="email"
+            formControlName="email"
+            class="form-control"
+            placeholder="email"
+            name="email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <span
+            class="text-danger validate-alert"
+            *ngIf="(form.password.dirty || form.password.touched) && form.password.errors">
+            <ng-container [ngSwitch]="form.password.value">
+              <ng-container *ngSwitchCase="''">password is required</ng-container >
+              <ng-container *ngSwitchDefault>password is invalid</ng-container>
+            </ng-container>
+          </span>
+          <input
+            type="password"
+            formControlName="password"
+            name="password"
+            class="form-control"
+            placeholder="password"
+            required
+          />
+        </div>
+        <div class="d-grid gap-2">
+          <button
+            class="btn register-btn btn-primary"
+            [disabled]="!registerForm.valid"
+            type="submit">
+            Register
+          </button>
+        </div>
+      </form>
+    </div>
+    <p class="text-center mt-5">
+      Are you a member? <a type="button" routerLink="/">Sign up</a>
+    </p>
+  </div>
+</div>
